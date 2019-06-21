@@ -10,6 +10,7 @@ from patsy import dmatrices
 import statsmodels.api as sm
 from matplotlib import pyplot as plt
 import matplotlib.artist as martist
+from matplotlib.offsetbox import AnchoredText
 
 os.chdir('/Users/pauline/Documents/Python')
 df = pd.read_csv("Tab-Morph.csv")
@@ -33,28 +34,28 @@ ax1.plt = sm.graphics.plot_partregress('sedim_thick', 'slope_angle',
                                        ['plate_phill', 'profile'],
                                        data=df, obs_labels=False, ax=ax1)
 ax1.set_title("Philippine Plate", fontsize=10)
-add_at(ax1, "A", loc=2)
+add_at(ax1, "A")
 
 # subplot 2
 ax2.plt = sm.graphics.plot_partregress('sedim_thick', 'slope_angle',
                                        ['plate_pacif', 'profile'],
                                        data=df, obs_labels=False, ax=ax2)
 ax2.set_title("Pacific Plate", fontsize=10)
-add_at(ax2, "B", loc=2)
+add_at(ax2, "B")
 
 # subplot 3
 ax3.plt = sm.graphics.plot_partregress('sedim_thick', 'slope_angle',
                                        ['plate_maria', 'profile'],
                                        data=df, obs_labels=False, ax=ax3)
 ax3.set_title("Mariana Plate", fontsize=10)
-add_at(ax3, "C", loc=2)
+add_at(ax3, "C")
 
 # subplot 4
 ax4.plt = sm.graphics.plot_partregress('sedim_thick', 'slope_angle',
                                        ['plate_carol', 'profile'],
                                        data=df, obs_labels=False, ax=ax4)
 ax4.set_title("Caroline Plate", fontsize=10)
-add_at(ax4, "D", loc=2)
+add_at(ax4, "D")
 
 # visualizing and saving
 plt.tight_layout()
